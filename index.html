@@ -7,86 +7,143 @@
 <meta name="description" content="YT Live Streamer — watch 3 ads, get 2 hours of live streaming to YouTube & Facebook every day.">
 <style>
   :root{
-    --bg:#050507;
-    --panel:#101116;
-    --panel2:#17181f;
-    --line:#26272f;
-    --text:#f4f4f6;
-    --dim:#a7a9b4;
-    --red:#e50914;
-    --red2:#ff2e3e;
+    --bg:#07030f;
+    --panel:rgba(20,10,40,.66);
+    --line:#7b2ff7;
+    --text:#f5f2ff;
+    --dim:#b9a8d9;
+    --pink:#ff2ea6;
+    --violet:#7b2ff7;
+    --cyan:#22d3ee;
     --gold:#ffc33c;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     background:
-      radial-gradient(700px 380px at 85% -80px, rgba(229,9,20,.20), transparent 60%),
-      radial-gradient(600px 420px at -10% 105%, rgba(255,195,60,.08), transparent 60%),
+      radial-gradient(640px 340px at 88% -60px, rgba(255,46,166,.28), transparent 60%),
+      radial-gradient(560px 380px at -12% 108%, rgba(123,47,247,.30), transparent 60%),
+      radial-gradient(420px 260px at 50% 42%, rgba(34,211,238,.10), transparent 65%),
+      linear-gradient(rgba(123,47,247,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,46,166,.06) 1px, transparent 1px),
       var(--bg);
+    background-size:auto,auto,auto,44px 44px,44px 44px,auto;
     color:var(--text);
     font-family:"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     min-height:100vh;
     display:flex; align-items:center; justify-content:center;
-    padding:28px 16px 40px;
+    padding:30px 16px 42px;
   }
   .wrap{width:100%; max-width:430px; text-align:center}
   .logo{
-    width:190px; height:190px; object-fit:contain;
-    border-radius:34px;
-    box-shadow:0 18px 50px rgba(229,9,20,.28), 0 4px 18px rgba(0,0,0,.7);
+    width:172px; height:172px; object-fit:contain;
+    border-radius:36px;
+    border:2px solid rgba(255,46,166,.75);
+    box-shadow:
+      0 0 26px rgba(255,46,166,.55),
+      0 0 70px rgba(123,47,247,.45),
+      0 16px 44px rgba(0,0,0,.75),
+      inset 0 0 18px rgba(123,47,247,.35);
   }
-  h1{font-size:32px; font-weight:800; letter-spacing:.4px; margin-top:22px}
-  h1 .live{color:var(--red2)}
+  h1{
+    font-size:34px; font-weight:900; font-style:italic; letter-spacing:.5px; margin-top:24px;
+    background:linear-gradient(92deg, var(--cyan) 0%, #a78bfa 45%, var(--pink) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 12px rgba(255,46,166,.45)) drop-shadow(0 2px 10px rgba(0,0,0,.6));
+  }
   .tagline{
-    color:var(--gold); font-size:15px; font-weight:700;
-    letter-spacing:3.5px; text-transform:uppercase; margin-top:6px;
+    color:var(--pink); font-size:15px; font-weight:800;
+    letter-spacing:4.5px; text-transform:uppercase; margin-top:7px;
+    text-shadow:0 0 14px rgba(255,46,166,.75), 0 0 34px rgba(255,46,166,.35);
   }
   .version{
-    display:inline-block; margin-top:14px; padding:5px 14px;
-    border:1px solid var(--line); border-radius:999px;
-    background:var(--panel); color:var(--dim); font-size:13px; font-weight:600;
+    display:inline-block; margin-top:16px; padding:6px 18px;
+    color:#e9d5ff; font-size:13px; font-weight:700; letter-spacing:1px;
+    background:linear-gradient(180deg, rgba(123,47,247,.28), rgba(20,10,40,.7));
+    border:1px solid var(--line);
+    clip-path:polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+    box-shadow:0 0 16px rgba(123,47,247,.35);
   }
   .card{
-    background:linear-gradient(180deg, var(--panel2), var(--panel));
-    border:1px solid var(--line); border-radius:22px;
-    padding:22px 20px; margin-top:24px; text-align:left;
-    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    background:var(--panel);
+    border:1px solid rgba(255,46,166,.45);
+    border-radius:20px;
+    padding:22px 20px; margin-top:26px; text-align:left;
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    box-shadow:
+      0 0 0 1px rgba(123,47,247,.25),
+      0 0 30px rgba(123,47,247,.22),
+      0 18px 40px rgba(0,0,0,.55);
   }
   .feat{display:flex; gap:12px; align-items:flex-start; padding:9px 0}
-  .feat + .feat{border-top:1px solid rgba(255,255,255,.05)}
-  .dot{
-    flex:0 0 auto; width:10px; height:10px; border-radius:50%;
-    background:var(--red2); margin-top:6px;
-    box-shadow:0 0 10px rgba(255,46,62,.8);
+  .feat + .feat{border-top:1px solid rgba(167,139,250,.16)}
+  .mark{
+    flex:0 0 auto; color:var(--cyan); font-weight:900; font-size:16px; line-height:1.35;
+    text-shadow:0 0 10px rgba(34,211,238,.9);
   }
-  .feat p{font-size:15px; line-height:1.45; color:#e8e9ee}
+  .feat p{font-size:15px; line-height:1.45; color:#e7e2f7}
   .feat p b{color:#fff}
   .btn{
-    display:block; margin-top:26px; padding:17px 20px;
-    background:linear-gradient(180deg, var(--red2), var(--red));
-    color:#fff; text-decoration:none; font-size:19px; font-weight:800;
-    letter-spacing:.6px; border-radius:16px;
-    box-shadow:0 12px 30px rgba(229,9,20,.40);
+    display:block; margin-top:28px; padding:17px 20px;
+    background:linear-gradient(180deg, rgba(255,46,166,.16), rgba(123,47,247,.16));
+    border:2px solid var(--pink);
+    color:#fff; text-decoration:none; font-size:19px; font-weight:900;
+    letter-spacing:1px; border-radius:16px;
+    text-shadow:0 0 12px rgba(255,46,166,.8);
+    box-shadow:
+      0 0 22px rgba(255,46,166,.50),
+      0 0 54px rgba(123,47,247,.35),
+      inset 0 0 18px rgba(255,46,166,.22);
     transition:transform .08s ease, box-shadow .2s ease;
   }
   .btn:active{transform:scale(.98)}
-  .btn small{display:block; font-size:12.5px; font-weight:600; opacity:.85; margin-top:3px; letter-spacing:.2px}
+  .btn small{display:block; font-size:12.5px; font-weight:600; opacity:.85; margin-top:3px; letter-spacing:.2px; text-shadow:none}
   .note{color:var(--dim); font-size:13px; line-height:1.55; margin-top:16px}
-  .foot{color:#5c5e68; font-size:12px; margin-top:30px; letter-spacing:1.5px; text-transform:uppercase}
+  .foot{color:#8f7fb8; font-size:12px; margin-top:30px; letter-spacing:2.5px; text-transform:uppercase}
+
+  /* --- motion / 3D --- */
+  @keyframes floaty{
+    0%,100%{transform:perspective(650px) rotateX(6deg) rotateY(-7deg) translateY(0)}
+    50%{transform:perspective(650px) rotateX(-5deg) rotateY(7deg) translateY(-10px)}
+  }
+  @keyframes glowPulse{
+    0%,100%{box-shadow:0 0 22px rgba(255,46,166,.45), 0 0 60px rgba(123,47,247,.35), 0 16px 44px rgba(0,0,0,.75), inset 0 0 18px rgba(123,47,247,.30)}
+    50%{box-shadow:0 0 38px rgba(255,46,166,.78), 0 0 98px rgba(123,47,247,.55), 0 22px 50px rgba(0,0,0,.8), inset 0 0 24px rgba(123,47,247,.45)}
+  }
+  .logo{animation:floaty 5.5s ease-in-out infinite, glowPulse 3.2s ease-in-out infinite; will-change:transform}
+  @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  h1{background-size:220% auto; animation:shimmer 6s linear infinite}
+  @keyframes tagPulse{0%,100%{opacity:1}50%{opacity:.7}}
+  .tagline{animation:tagPulse 2.6s ease-in-out infinite}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(18px)}to{opacity:1; transform:translateY(0)}}
+  .card{animation:fadeUp .8s ease both .15s}
+  .feat{animation:fadeUp .7s ease both}
+  .feat:nth-child(1){animation-delay:.30s}
+  .feat:nth-child(2){animation-delay:.45s}
+  .feat:nth-child(3){animation-delay:.60s}
+  .feat:nth-child(4){animation-delay:.75s}
+  .btn{position:relative; overflow:hidden; animation:fadeUp .7s ease both .9s}
+  .btn::after{
+    content:""; position:absolute; top:0; left:-90%; width:55%; height:100%;
+    background:linear-gradient(105deg, transparent, rgba(255,255,255,.35), transparent);
+    transform:skewX(-20deg); pointer-events:none;
+    animation:shine 2.8s ease-in-out infinite;
+  }
+  @keyframes shine{0%{left:-90%}55%{left:140%}100%{left:140%}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
   <main class="wrap">
     <img class="logo" src="logo.png" alt="YT Live Streamer logo">
-    <h1>YT <span class="live">LIVE</span> Streamer</h1>
+    <h1>YT LIVE Streamer</h1>
     <div class="tagline">Go Live Anywhere</div>
     <div><span class="version">Version 1.7.3</span></div>
 
     <section class="card">
-      <div class="feat"><span class="dot"></span><p><b>Watch 3 ads</b> — get <b>2 hours of live</b> streaming every day</p></div>
-      <div class="feat"><span class="dot"></span><p>Upload videos up to <b>100 MB</b></p></div>
-      <div class="feat"><span class="dot"></span><p><b>Direct stream</b> to YouTube &amp; Facebook — no re-encoding, full quality</p></div>
-      <div class="feat"><span class="dot"></span><p><b>One phone, one account</b> — sign in with Google, that is all</p></div>
+      <div class="feat"><span class="mark">&gt;</span><p><b>Watch 3 ads</b> — get <b>2 hours of live</b> streaming every day</p></div>
+      <div class="feat"><span class="mark">&gt;</span><p>Upload videos up to <b>100 MB</b></p></div>
+      <div class="feat"><span class="mark">&gt;</span><p><b>Direct stream</b> to YouTube &amp; Facebook — no re-encoding, full quality</p></div>
+      <div class="feat"><span class="mark">&gt;</span><p><b>One phone, one account</b> — sign in with Google, that is all</p></div>
     </section>
 
     <a class="btn" href="yt-live-streamer.apk" download>⬇ DOWNLOAD APK<small>Free • Android 8.0 or higher</small></a>
